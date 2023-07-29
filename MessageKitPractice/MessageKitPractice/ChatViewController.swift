@@ -8,7 +8,7 @@
 import UIKit
 import MessageKit
 
-class ChatViewController: MessagesViewController {
+class ChatExamViewController: MessagesViewController {
 
     private let currentUser = Sender(senderId: "self", displayName: "MessageKit Practice App")
     private let otherUser = Sender(senderId: "other", displayName: "PersonA")
@@ -29,7 +29,7 @@ class ChatViewController: MessagesViewController {
     }
 }
 
-extension ChatViewController: MessagesDataSource {
+extension ChatExamViewController: MessagesDataSource {
     var currentSender: MessageKit.SenderType {
         return currentUser
     }
@@ -43,18 +43,18 @@ extension ChatViewController: MessagesDataSource {
     }
 }
 
-extension ChatViewController: MessagesLayoutDelegate {
+extension ChatExamViewController: MessagesLayoutDelegate {
     
 }
 
-extension ChatViewController: MessagesDisplayDelegate {
+extension ChatExamViewController: MessagesDisplayDelegate {
     
 }
 
 
 // MARK: TestData Injection
 
-extension ChatViewController {
+extension ChatExamViewController {
     func injectTestData() {
         messages.append(
             Message(sender: currentUser,
