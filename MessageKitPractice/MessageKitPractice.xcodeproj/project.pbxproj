@@ -14,6 +14,7 @@
 		D26FE2782A75832C00CE6BBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D26FE2762A75832C00CE6BBF /* LaunchScreen.storyboard */; };
 		D26FE2802A7587E100CE6BBF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26FE27F2A7587E100CE6BBF /* ChatViewController.swift */; };
 		D26FE2832A75887400CE6BBF /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = D26FE2822A75887400CE6BBF /* MessageKit */; };
+		D26FE2862A7589F800CE6BBF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26FE2852A7589F800CE6BBF /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D26FE2772A75832C00CE6BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D26FE2792A75832C00CE6BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D26FE27F2A7587E100CE6BBF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D26FE2852A7589F800CE6BBF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		D26FE26A2A75832B00CE6BBF /* MessageKitPractice */ = {
 			isa = PBXGroup;
 			children = (
+				D26FE2842A7589E200CE6BBF /* Model */,
 				D26FE26B2A75832B00CE6BBF /* AppDelegate.swift */,
 				D26FE26D2A75832B00CE6BBF /* SceneDelegate.swift */,
 				D26FE26F2A75832B00CE6BBF /* ViewController.swift */,
@@ -67,6 +70,14 @@
 				D26FE2792A75832C00CE6BBF /* Info.plist */,
 			);
 			path = MessageKitPractice;
+			sourceTree = "<group>";
+		};
+		D26FE2842A7589E200CE6BBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D26FE2852A7589F800CE6BBF /* Message.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 			files = (
 				D26FE2702A75832B00CE6BBF /* ViewController.swift in Sources */,
 				D26FE26C2A75832B00CE6BBF /* AppDelegate.swift in Sources */,
+				D26FE2862A7589F800CE6BBF /* Message.swift in Sources */,
 				D26FE2802A7587E100CE6BBF /* ChatViewController.swift in Sources */,
 				D26FE26E2A75832B00CE6BBF /* SceneDelegate.swift in Sources */,
 			);

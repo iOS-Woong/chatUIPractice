@@ -8,11 +8,10 @@
 import UIKit
 import MessageKit
 
-class ChatViewController: UIViewController {
+class ChatViewController: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-
 }
