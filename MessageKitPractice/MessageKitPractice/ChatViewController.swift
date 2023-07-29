@@ -10,6 +10,10 @@ import MessageKit
 
 class ChatViewController: MessagesViewController {
 
+    private let currentUser = Sender(senderId: "self", displayName: "MessageKit Practice App")
+    private let otherUser = Sender(senderId: "other", displayName: "PersonA")
+    private var messages = [MessageType]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMessageCollectionViewAttributes()
@@ -25,7 +29,7 @@ class ChatViewController: MessagesViewController {
 
 extension ChatViewController: MessagesDataSource {
     var currentSender: MessageKit.SenderType {
-        <#code#>
+        return currentUser
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessageKit.MessagesCollectionView) -> MessageKit.MessageType {
