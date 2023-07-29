@@ -14,8 +14,8 @@ struct Sender: SenderType {
 }
 
 struct Message: MessageType {
-    var sender: MessageKit.SenderType
+    var sender: SenderType
     var messageId: String
     var sentDate: Date
-    var kind: MessageKit.MessageKind
+    var kind: MessageKind
 }
