@@ -17,6 +17,7 @@ class ChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMessageCollectionViewAttributes()
+        injectTestData()
     }
     
     private func setupMessageCollectionViewAttributes() {
@@ -49,4 +50,53 @@ extension ChatViewController: MessagesLayoutDelegate {
 
 extension ChatViewController: MessagesDisplayDelegate {
     
+}
+
+
+// MARK: TestData Injection
+
+extension ChatViewController {
+    func injectTestData() {
+        messages.append(
+            Message(sender: currentUser,
+                    messageId: "1",
+                    sentDate: Date().addingTimeInterval(-86400),
+                    kind: .text("Hello World")))
+        
+        messages.append(
+            Message(sender: currentUser,
+                    messageId: "1",
+                    sentDate: Date().addingTimeInterval(-86400),
+                    kind: .text("Hello World")))
+        
+        messages.append(
+            Message(sender: currentUser,
+                    messageId: "1",
+                    sentDate: Date().addingTimeInterval(-86400),
+                    kind: .text("Hello World")))
+        
+        messages.append(
+            Message(sender: currentUser,
+                    messageId: "1",
+                    sentDate: Date().addingTimeInterval(-86400),
+                    kind: .text("Hello World")))
+        
+        messages.append(
+            Message(sender: currentUser,
+                    messageId: "1",
+                    sentDate: Date().addingTimeInterval(-86400),
+                    kind: .text("Hello World")))
+        
+        messages.append(
+            Message(sender: currentUser,
+                    messageId: "1",
+                    sentDate: Date().addingTimeInterval(-86400),
+                    kind: .text("Hello World")))
+        
+        messages.append(
+            Message(sender: currentUser,
+                    messageId: "1",
+                    sentDate: Date().addingTimeInterval(-86400),
+                    kind: .text("Hello World")))
+    }
 }
