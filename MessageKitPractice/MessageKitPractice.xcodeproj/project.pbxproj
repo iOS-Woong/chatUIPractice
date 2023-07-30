@@ -16,6 +16,7 @@
 		D26FE2832A75887400CE6BBF /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = D26FE2822A75887400CE6BBF /* MessageKit */; };
 		D26FE2862A7589F800CE6BBF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26FE2852A7589F800CE6BBF /* Message.swift */; };
 		D2AAF74A2A76C83F006AD936 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF7492A76C83F006AD936 /* SampleData.swift */; };
+		D2AAF74D2A76CC14006AD936 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF74C2A76CC14006AD936 /* UIColor+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D26FE27F2A7587E100CE6BBF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D26FE2852A7589F800CE6BBF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D2AAF7492A76C83F006AD936 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		D2AAF74C2A76CC14006AD936 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		D26FE26A2A75832B00CE6BBF /* MessageKitPractice */ = {
 			isa = PBXGroup;
 			children = (
+				D2AAF74B2A76CC01006AD936 /* Extension */,
 				D26FE2842A7589E200CE6BBF /* Model */,
 				D26FE26B2A75832B00CE6BBF /* AppDelegate.swift */,
 				D26FE26D2A75832B00CE6BBF /* SceneDelegate.swift */,
@@ -81,6 +84,14 @@
 				D26FE2852A7589F800CE6BBF /* Message.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D2AAF74B2A76CC01006AD936 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAF74C2A76CC14006AD936 /* UIColor+Ext.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2AAF74D2A76CC14006AD936 /* UIColor+Ext.swift in Sources */,
 				D26FE2702A75832B00CE6BBF /* ViewController.swift in Sources */,
 				D2AAF74A2A76C83F006AD936 /* SampleData.swift in Sources */,
 				D26FE26C2A75832B00CE6BBF /* AppDelegate.swift in Sources */,

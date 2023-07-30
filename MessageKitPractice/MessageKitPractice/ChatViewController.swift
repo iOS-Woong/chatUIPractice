@@ -32,11 +32,9 @@ class ChatExamViewController: MessagesViewController {
     
     private func setupInputBarAttributes() {
         messageInputBar.delegate = self
-//        messageInputBar.inputTextView.tintColor = .primaryColor
-//        messageInputBar.sendButton.setTitleColor(.primaryColor, for: .normal)
-//        messageInputBar.sendButton.setTitleColor(
-//            UIColor.primaryColor.withAlphaComponent(0.3),
-//            for: .highlighted)
+        messageInputBar.inputTextView.tintColor = .primaryColor
+        messageInputBar.sendButton.setTitleColor(.primaryColor, for: .normal)
+        messageInputBar.sendButton.setTitleColor(.primaryColor.withAlphaComponent(0.3), for: .highlighted)
     }
     
 }
