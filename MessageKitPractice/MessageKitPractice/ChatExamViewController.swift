@@ -15,8 +15,8 @@ import InputBarAccessoryView
 
 class ChatExamViewController: MessagesViewController {
     
-    private (set) var currentUser = Sender(senderId: "self", displayName: "MessageKit Practice App")
-    private (set) var otherUser = Sender(senderId: "other", displayName: "PersonA")
+    private (set) var currentUser = Sender(senderId: "self", displayName: "스티브잡스")
+    private (set) var otherUser = Sender(senderId: "other", displayName: "모르는사람")
     var messages = [MessageType]()
     
     override func viewDidLoad() {
@@ -56,9 +56,9 @@ extension ChatExamViewController: MessagesDataSource {
     
     // 이거 상단라벨 시간설정용?
     func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-        let name = message.sender.displayName
+        let date = "2086년 12월 32일 등 날짜"
         return NSAttributedString(
-          string: name,
+          string: date,
           attributes: [
             .font: UIFont.preferredFont(forTextStyle: .caption1),
             .foregroundColor: UIColor(white: 0.3, alpha: 1)
@@ -76,6 +76,20 @@ extension ChatExamViewController: MessagesDataSource {
             .foregroundColor: UIColor(white: 0.3, alpha: 1)
           ]
         )
+    }
+    
+    
+    func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let date = message.sentDate.description
+        return NSAttributedString(
+          string: date,
+          attributes: [
+            .font: UIFont.preferredFont(forTextStyle: .caption1),
+            .foregroundColor: UIColor(white: 0.3, alpha: 1)
+          ]
+        )
+        
+        
     }
 }
 
