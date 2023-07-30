@@ -39,6 +39,18 @@ extension ChatBotViewController: MessagesDisplayDelegate {
         let avatar = Avatar(image: UIImage(named: "Steve-Jobs"), initials: "Job-korea")
         avatarView.set(avatar: avatar)
     }
+    
+    func configureMediaMessageImageView(_ imageView: UIImageView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        /* TODO: 이곳에서 이미지캐시를 구현하면 된다.
+        if case MessageKind.photo(let media) = message.kind {
+            if case MessageKind.photo(let media) = message.kind, let imageURL = media.url {
+              imageView.kf.setImage(with: imageURL)
+            } else {
+              imageView.kf.cancelDownloadTask()
+            }
+        }
+         */
+    }
 }
 
 extension ChatBotViewController: MessagesLayoutDelegate {
