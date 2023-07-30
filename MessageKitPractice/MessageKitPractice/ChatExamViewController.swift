@@ -53,6 +53,30 @@ extension ChatExamViewController: MessagesDataSource {
     func numberOfSections(in messagesCollectionView: MessageKit.MessagesCollectionView) -> Int {
         return messages.count
     }
+    
+    // 이거 상단라벨 시간설정용?
+    func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let name = message.sender.displayName
+        return NSAttributedString(
+          string: name,
+          attributes: [
+            .font: UIFont.preferredFont(forTextStyle: .caption1),
+            .foregroundColor: UIColor(white: 0.3, alpha: 1)
+          ]
+        )
+      }
+    
+    // 이거 상단라벨 이름설정용??
+    func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let name = message.sender.displayName
+        return NSAttributedString(
+          string: name,
+          attributes: [
+            .font: UIFont.preferredFont(forTextStyle: .caption1),
+            .foregroundColor: UIColor(white: 0.3, alpha: 1)
+          ]
+        )
+    }
 }
 
 extension ChatExamViewController: InputBarAccessoryViewDelegate {

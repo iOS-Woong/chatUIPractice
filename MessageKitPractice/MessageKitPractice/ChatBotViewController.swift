@@ -54,6 +54,20 @@ extension ChatBotViewController: MessagesDisplayDelegate {
 }
 
 extension ChatBotViewController: MessagesLayoutDelegate {
+    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 40 // Message top Padding 값
+    }
     
+    func cellBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 40 // Message bottom Padding 값
+    }
+    
+    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 30 // 위랑 뭔차이? ;; 아무튼 간격늘어나긴함
+    }
+    
+    func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 30
+    }
 }
 
