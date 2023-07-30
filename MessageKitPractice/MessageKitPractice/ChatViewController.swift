@@ -7,6 +7,7 @@
 
 import UIKit
 import MessageKit
+import InputBarAccessoryView
 
 class ChatExamViewController: MessagesViewController {
 
@@ -18,6 +19,7 @@ class ChatExamViewController: MessagesViewController {
         super.viewDidLoad()
         injectTestData()
         setupMessageCollectionViewAttributes()
+        setupInputBarAttributes()
     }
     
     private func setupMessageCollectionViewAttributes() {
@@ -27,6 +29,16 @@ class ChatExamViewController: MessagesViewController {
         // 초기에 reloadData를 호출하여 MessagesDatasource 메서드를 수동으로 호출해줘야함. 이유는 모르겠다.
         messagesCollectionView.reloadData()
     }
+    
+    private func setupInputBarAttributes() {
+        messageInputBar.delegate = self
+//        messageInputBar.inputTextView.tintColor = .primaryColor
+//        messageInputBar.sendButton.setTitleColor(.primaryColor, for: .normal)
+//        messageInputBar.sendButton.setTitleColor(
+//            UIColor.primaryColor.withAlphaComponent(0.3),
+//            for: .highlighted)
+    }
+    
 }
 
 extension ChatExamViewController: MessagesDataSource {
@@ -51,6 +63,11 @@ extension ChatExamViewController: MessagesDisplayDelegate {
     
 }
 
+extension ChatExamViewController: InputBarAccessoryViewDelegate {
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        print(text)
+    }
+}
 
 // MARK: TestData Injection
 
