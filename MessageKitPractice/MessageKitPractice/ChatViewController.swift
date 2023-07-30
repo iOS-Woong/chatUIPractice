@@ -98,11 +98,10 @@ extension ChatExamViewController: InputBarAccessoryViewDelegate {
         for component in data {
             let user = currentSender
             if let str = component as? String {
-                let message = Message(sender: user, messageId: UUID().uuidString, sentDate: Date(), kind: .text(str))
+                let message = Message(text: str, sender: user, messageId: UUID().uuidString, date: Date())
                 insertMessage(message)
-            } else if let img = component as? UIImage,
-                      let mediaItem = img as? MediaItem {
-                let message = Message(sender: user, messageId: UUID().uuidString, sentDate: Date(), kind: .photo(mediaItem))
+            } else if let img = component as? UIImage {
+                let message = Message(image: img, sender: user, messageId: UUID().uuidString, date: Date())
                 insertMessage(message)
               }
         }

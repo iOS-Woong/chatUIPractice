@@ -6,57 +6,50 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: TestData Injection
 
 extension ChatExamViewController {
     func injectTestData() {
-        messages.append(
-            Message(sender: currentUser,
-                    messageId: "1",
-                    sentDate: Date().addingTimeInterval(-86400),
-                    kind: .text("Hello World")))
+        messages.append(Message(text: "안녕하심까",
+                                sender: otherUser,
+                                messageId: UUID().uuidString,
+                                date: Date().addingTimeInterval(-86400)))
         
-        messages.append(
-            Message(sender: otherUser,
-                    messageId: "2",
-                    sentDate: Date().addingTimeInterval(-80000),
-                    kind: .text("안녕하심니까")))
+        messages.append(Message(text: "두번째 텍서터",
+                                sender: otherUser,
+                                messageId: UUID().uuidString,
+                                date: Date().addingTimeInterval(-85000)))
         
-        messages.append(
-            Message(sender: currentUser,
-                    messageId: "3",
-                    sentDate: Date().addingTimeInterval(-75000),
-                    kind: .text("잘지내심니까")))
+        messages.append(Message(image: UIImage(named: "screenshot1")!,
+                                sender: currentUser,
+                                messageId: UUID().uuidString,
+                                date: Date().addingTimeInterval(-80000)))
         
-        messages.append(
-            Message(sender: currentUser,
-                    messageId: "4",
-                    sentDate: Date().addingTimeInterval(-72000),
-                    kind: .text("네 저도잘지냄니다")))
+        messages.append(Message(text: "뭐죠이게",
+                                sender: otherUser,
+                                messageId: UUID().uuidString,
+                                date: Date().addingTimeInterval(-75000)))
         
-        messages.append(
-            Message(sender: otherUser,
-                    messageId: "5",
-                    sentDate: Date().addingTimeInterval(-70000),
-                    kind: .text("네 알겠슴다")))
+        messages.append(Message(text: "이것도 대화입니까?",
+                                sender: otherUser,
+                                messageId: UUID().uuidString,
+                                date: Date().addingTimeInterval(-40000)))
+
+        messages.append(Message(text: "네 맞습니다",
+                                sender: otherUser,
+                                messageId: UUID().uuidString,
+                                date: Date().addingTimeInterval(-30000)))
         
-        messages.append(
-            Message(sender: currentUser,
-                    messageId: "6",
-                    sentDate: Date().addingTimeInterval(-65000),
-                    kind: .text("저는 여섯번째 보낸 메시지에요")))
+        messages.append(Message(image: UIImage(named: "screenshot1")!,
+                                sender: currentUser,
+                                messageId: UUID().uuidString,
+                                date: Date().addingTimeInterval(-20000)))
         
-        messages.append(
-            Message(sender: otherUser,
-                    messageId: "7",
-                    sentDate: Date().addingTimeInterval(-50000),
-                    kind: .text("예")))
-        
-        messages.append(
-            Message(sender: otherUser,
-                    messageId: "8",
-                    sentDate: Date().addingTimeInterval(-50000),
-                    kind: .text("예")))
+        messages.append(Message(image: UIImage(named: "screenshot1")!,
+                                sender: otherUser,
+                                messageId: UUID().uuidString,
+                                date: Date().addingTimeInterval(-10000)))
     }
 }
