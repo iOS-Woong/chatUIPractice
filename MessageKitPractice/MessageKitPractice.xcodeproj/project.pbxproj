@@ -15,6 +15,7 @@
 		D26FE2802A7587E100CE6BBF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26FE27F2A7587E100CE6BBF /* ChatViewController.swift */; };
 		D26FE2832A75887400CE6BBF /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = D26FE2822A75887400CE6BBF /* MessageKit */; };
 		D26FE2862A7589F800CE6BBF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26FE2852A7589F800CE6BBF /* Message.swift */; };
+		D2AAF74A2A76C83F006AD936 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF7492A76C83F006AD936 /* SampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D26FE2792A75832C00CE6BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D26FE27F2A7587E100CE6BBF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D26FE2852A7589F800CE6BBF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D2AAF7492A76C83F006AD936 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				D26FE2742A75832C00CE6BBF /* Assets.xcassets */,
 				D26FE2762A75832C00CE6BBF /* LaunchScreen.storyboard */,
 				D26FE2792A75832C00CE6BBF /* Info.plist */,
+				D2AAF7492A76C83F006AD936 /* SampleData.swift */,
 			);
 			path = MessageKitPractice;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D26FE2702A75832B00CE6BBF /* ViewController.swift in Sources */,
+				D2AAF74A2A76C83F006AD936 /* SampleData.swift in Sources */,
 				D26FE26C2A75832B00CE6BBF /* AppDelegate.swift in Sources */,
 				D26FE2862A7589F800CE6BBF /* Message.swift in Sources */,
 				D26FE2802A7587E100CE6BBF /* ChatViewController.swift in Sources */,
