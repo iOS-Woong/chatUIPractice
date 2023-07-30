@@ -5,6 +5,10 @@
 //  Created by 서현웅 on 2023/07/30.
 //
 
+// 기준
+// 부모가 가진 작업을 모두 사용하는 경우에는 상속 , 부모의 기능 +@로 기능을 사용할 때 상속을 사용한다.
+// 상속 할 때, 주의해야 할 점 (부모와 자식이 동일하게 동작하지 않을 경우를 유의하라)
+
 import UIKit
 import MessageKit
 import InputBarAccessoryView
@@ -22,10 +26,8 @@ class ChatExamViewController: MessagesViewController {
         setupInputBarAttributes()
     }
     
-    private func setupMessageCollectionViewAttributes() {
+    func setupMessageCollectionViewAttributes() {
         messagesCollectionView.messagesDataSource = self
-        messagesCollectionView.messagesLayoutDelegate = self
-        messagesCollectionView.messagesDisplayDelegate = self
         // 초기에 reloadData를 호출하여 MessagesDatasource 메서드를 수동으로 호출해줘야함. 이유는 모르겠다.
         messagesCollectionView.reloadData()
     }
@@ -51,14 +53,6 @@ extension ChatExamViewController: MessagesDataSource {
     func numberOfSections(in messagesCollectionView: MessageKit.MessagesCollectionView) -> Int {
         return messages.count
     }
-}
-
-extension ChatExamViewController: MessagesLayoutDelegate {
-    
-}
-
-extension ChatExamViewController: MessagesDisplayDelegate {
-    
 }
 
 extension ChatExamViewController: InputBarAccessoryViewDelegate {
@@ -111,13 +105,4 @@ extension ChatExamViewController: InputBarAccessoryViewDelegate {
         messages.append(message)
         messagesCollectionView.reloadData()
     }
-    
 }
-
-
-/*
- else if let img = component as? UIImage {
-   let message = MockMessage(image: img, user: user, messageId: UUID().uuidString, date: Date())
-   insertMessage(message)
- }
- */
