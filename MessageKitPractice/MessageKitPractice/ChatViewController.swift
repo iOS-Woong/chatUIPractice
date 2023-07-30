@@ -10,7 +10,7 @@ import MessageKit
 import InputBarAccessoryView
 
 class ChatExamViewController: MessagesViewController {
-
+    
     private (set) var currentUser = Sender(senderId: "self", displayName: "MessageKit Practice App")
     private (set) var otherUser = Sender(senderId: "other", displayName: "PersonA")
     var messages = [MessageType]()
@@ -67,7 +67,7 @@ extension ChatExamViewController: InputBarAccessoryViewDelegate {
     }
     
     private func processInputBar(_ inputBar: InputBarAccessoryView) {
-        let components = inputBar.inputTextView.components
+        var components = inputBar.inputTextView.components
         
         inputBar.inputTextView.text = String()
         inputBar.invalidatePlugins() // 이유알아보기
@@ -81,6 +81,13 @@ extension ChatExamViewController: InputBarAccessoryViewDelegate {
             DispatchQueue.main.async { [weak self] in
                 inputBar.sendButton.stopAnimating()
                 inputBar.inputTextView.placeholder = "Aa"
+                
+                // MARK: [임시] component가 "@이미지" 일 때, 이미지 넣어주도록함.
+                if components.contains(where: { $0 as? String == "@이미지" }) {
+                    components = [Any]()
+                    components.append(UIImage(named: "screenshot1"))
+                }
+                
                 self?.insertMessages(components)
                 self?.messagesCollectionView.scrollToLastItem()
             }
@@ -88,13 +95,17 @@ extension ChatExamViewController: InputBarAccessoryViewDelegate {
     }
     
     private func insertMessages(_ data: [Any]) {
-      for component in data {
-        let user = currentSender
-        if let str = component as? String {
-            let message = Message(sender: user, messageId: UUID().uuidString, sentDate: Date(), kind: .text(str))
-            insertMessage(message)
-        } // else if로 component가 image일 때는 message에 이미지를 담을 수 있도록 구현하여야함.
-      }
+        for component in data {
+            let user = currentSender
+            if let str = component as? String {
+                let message = Message(sender: user, messageId: UUID().uuidString, sentDate: Date(), kind: .text(str))
+                insertMessage(message)
+            } else if let img = component as? UIImage,
+                      let mediaItem = img as? MediaItem {
+                let message = Message(sender: user, messageId: UUID().uuidString, sentDate: Date(), kind: .photo(mediaItem))
+                insertMessage(message)
+              }
+        }
     }
     
     private func insertMessage(_ message: Message) {
@@ -103,3 +114,11 @@ extension ChatExamViewController: InputBarAccessoryViewDelegate {
     }
     
 }
+
+
+/*
+ else if let img = component as? UIImage {
+   let message = MockMessage(image: img, user: user, messageId: UUID().uuidString, date: Date())
+   insertMessage(message)
+ }
+ */
