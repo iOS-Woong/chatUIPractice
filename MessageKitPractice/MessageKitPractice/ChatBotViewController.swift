@@ -34,6 +34,11 @@ extension ChatBotViewController: MessagesDisplayDelegate {
         let tail: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
         return .bubbleTail(tail, .curved)
     }
+    
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        let avatar = Avatar(image: UIImage(named: "Steve-Jobs"), initials: "Job-korea")
+        avatarView.set(avatar: avatar)
+    }
 }
 
 extension ChatBotViewController: MessagesLayoutDelegate {
