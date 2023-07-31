@@ -18,6 +18,7 @@
 		D2AAF74A2A76C83F006AD936 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF7492A76C83F006AD936 /* SampleData.swift */; };
 		D2AAF74D2A76CC14006AD936 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF74C2A76CC14006AD936 /* UIColor+Ext.swift */; };
 		D2AAF74F2A76E130006AD936 /* ChatBotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF74E2A76E130006AD936 /* ChatBotViewController.swift */; };
+		D2AAF7512A777E29006AD936 /* MessageKitDateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF7502A777E29006AD936 /* MessageKitDateFormatter+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D2AAF7492A76C83F006AD936 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		D2AAF74C2A76CC14006AD936 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		D2AAF74E2A76E130006AD936 /* ChatBotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewController.swift; sourceTree = "<group>"; };
+		D2AAF7502A777E29006AD936 /* MessageKitDateFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageKitDateFormatter+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AAF74C2A76CC14006AD936 /* UIColor+Ext.swift */,
+				D2AAF7502A777E29006AD936 /* MessageKitDateFormatter+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				D26FE2702A75832B00CE6BBF /* ViewController.swift in Sources */,
 				D2AAF74F2A76E130006AD936 /* ChatBotViewController.swift in Sources */,
 				D2AAF74A2A76C83F006AD936 /* SampleData.swift in Sources */,
+				D2AAF7512A777E29006AD936 /* MessageKitDateFormatter+Ext.swift in Sources */,
 				D26FE26C2A75832B00CE6BBF /* AppDelegate.swift in Sources */,
 				D26FE2862A7589F800CE6BBF /* Message.swift in Sources */,
 				D26FE2802A7587E100CE6BBF /* ChatExamViewController.swift in Sources */,

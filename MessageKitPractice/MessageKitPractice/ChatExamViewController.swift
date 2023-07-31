@@ -54,42 +54,34 @@ extension ChatExamViewController: MessagesDataSource {
         return messages.count
     }
     
-    // 이거 상단라벨 시간설정용?
     func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-        let date = "2086년 12월 32일 등 날짜"
-        return NSAttributedString(
-          string: date,
-          attributes: [
-            .font: UIFont.preferredFont(forTextStyle: .caption1),
-            .foregroundColor: UIColor(white: 0.3, alpha: 1)
-          ]
-        )
-      }
+        if indexPath.section % 3 == 0 {
+            return NSAttributedString(
+                string: MessageKitDateFormatter.shared.string(from: message.sentDate),
+                attributes: [
+                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10),
+                    NSAttributedString.Key.foregroundColor: UIColor.darkGray,
+                  ])
+        }
+        return nil
+    }
     
-    // 이거 상단라벨 이름설정용??
     func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let name = message.sender.displayName
         return NSAttributedString(
-          string: name,
-          attributes: [
-            .font: UIFont.preferredFont(forTextStyle: .caption1),
-            .foregroundColor: UIColor(white: 0.3, alpha: 1)
-          ]
+            string: name,
+            attributes: [
+                .font: UIFont.preferredFont(forTextStyle: .caption1),
+                .foregroundColor: UIColor(white: 0.3, alpha: 1)
+            ]
         )
     }
     
-    
     func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-        let date = message.sentDate.description
+        let dateString = MessageKitDateFormatter.shared.formatToKoreanTime(from: message.sentDate)
         return NSAttributedString(
-          string: date,
-          attributes: [
-            .font: UIFont.preferredFont(forTextStyle: .caption1),
-            .foregroundColor: UIColor(white: 0.3, alpha: 1)
-          ]
-        )
-        
-        
+          string: dateString,
+          attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
     }
 }
 
@@ -135,7 +127,7 @@ extension ChatExamViewController: InputBarAccessoryViewDelegate {
             } else if let img = component as? UIImage {
                 let message = Message(image: img, sender: user, messageId: UUID().uuidString, date: Date())
                 insertMessage(message)
-              }
+            }
         }
     }
     
