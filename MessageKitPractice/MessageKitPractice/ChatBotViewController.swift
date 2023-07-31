@@ -36,7 +36,14 @@ extension ChatBotViewController: MessagesDisplayDelegate {
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        let avatar = Avatar(image: UIImage(named: "Steve-Jobs"), initials: "Job-korea")
+        var avatar: Avatar
+        
+        if message.sender.displayName == "본인" {
+            avatar = Avatar(image: UIImage(named: "Steve-Jobs"))
+        } else {
+            avatar = Avatar(image: UIImage(named: "panda"))
+        }
+            
         avatarView.set(avatar: avatar)
     }
     
@@ -55,15 +62,15 @@ extension ChatBotViewController: MessagesDisplayDelegate {
 
 extension ChatBotViewController: MessagesLayoutDelegate {
     func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 20 // Message top Padding 값
+        return 20
     }
     
     func cellBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 20 // Message bottom Padding 값
+        return 20
     }
     
     func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 15 // 위랑 뭔차이? ;; 아무튼 간격늘어나긴함
+        return 15
     }
     
     func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {

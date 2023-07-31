@@ -14,8 +14,7 @@ import MessageKit
 import InputBarAccessoryView
 
 class ChatExamViewController: MessagesViewController {
-    
-    private (set) var currentUser = Sender(senderId: "self", displayName: "스티브잡스")
+    private var currentUser = Sender(senderId: "self", displayName: "본인")
     
     var messages = [MessageType]()
     
@@ -23,6 +22,10 @@ class ChatExamViewController: MessagesViewController {
         super.viewDidLoad()
         setupMessageCollectionViewAttributes()
         setupInputBarAttributes()
+        connectMockSocket() // 테스트메서드
+    }
+    
+    func connectMockSocket() {
         MockSocket.shared.connect(with: currentUser)
             .onNewMessage { [weak self] message in
                 self?.insertMessage(message)
