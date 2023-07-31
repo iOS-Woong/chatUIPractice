@@ -16,14 +16,18 @@ import InputBarAccessoryView
 class ChatExamViewController: MessagesViewController {
     
     private (set) var currentUser = Sender(senderId: "self", displayName: "스티브잡스")
-    private (set) var otherUser = Sender(senderId: "other", displayName: "모르는사람")
+    
     var messages = [MessageType]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        injectTestData()
         setupMessageCollectionViewAttributes()
         setupInputBarAttributes()
+        MockSocket.shared.connect(with: currentUser)
+            .onNewMessage { [weak self] message in
+                self?.insertMessage(message)
+                self?.messagesCollectionView.scrollToLastItem()
+            }
     }
     
     func setupMessageCollectionViewAttributes() {
@@ -61,7 +65,7 @@ extension ChatExamViewController: MessagesDataSource {
                 attributes: [
                     NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10),
                     NSAttributedString.Key.foregroundColor: UIColor.darkGray,
-                  ])
+                ])
         }
         return nil
     }
@@ -80,8 +84,8 @@ extension ChatExamViewController: MessagesDataSource {
     func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let dateString = MessageKitDateFormatter.shared.formatToKoreanTime(from: message.sentDate)
         return NSAttributedString(
-          string: dateString,
-          attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
+            string: dateString,
+            attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
     }
 }
 
@@ -109,7 +113,7 @@ extension ChatExamViewController: InputBarAccessoryViewDelegate {
                 // MARK: [임시] component가 "@이미지" 일 때, 이미지 넣어주도록함.
                 if components.contains(where: { $0 as? String == "@이미지" }) {
                     components = [Any]()
-                    components.append(UIImage(named: "screenshot1"))
+                    components.append(UIImage(named: "Tim-Cook"))
                 }
                 
                 self?.insertMessages(components)
