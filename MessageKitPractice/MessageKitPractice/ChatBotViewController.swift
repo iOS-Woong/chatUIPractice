@@ -23,6 +23,8 @@ class ChatBotViewController: ChatExamViewController {
         layout?.setMessageOutgoingMessageBottomLabelAlignment(LabelAlignment(
             textAlignment: .right,
             textInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)))
+        layout?.setMessageIncomingAvatarPosition(
+            AvatarPosition(vertical: .messageTop))
     }
 }
 
