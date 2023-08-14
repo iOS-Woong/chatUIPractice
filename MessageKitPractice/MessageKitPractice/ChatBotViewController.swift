@@ -14,6 +14,15 @@ class ChatBotViewController: ChatExamViewController {
         super.setupMessageCollectionViewAttributes()
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        
+        let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout
+        layout?.setMessageOutgoingAvatarSize(.zero)
+        layout?.setMessageOutgoingMessageTopLabelAlignment(LabelAlignment(
+            textAlignment: .right,
+            textInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)))
+        layout?.setMessageOutgoingMessageBottomLabelAlignment(LabelAlignment(
+            textAlignment: .right,
+            textInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)))
     }
 }
 
@@ -31,21 +40,14 @@ extension ChatBotViewController: MessagesDisplayDelegate {
     }
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle { // custom 가능
-        let tail: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
-        return .bubbleTail(tail, .curved)
+        return .none
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        var avatar: Avatar
-        
-        if message.sender.displayName == "본인" {
-            avatar = Avatar(image: UIImage(named: "Steve-Jobs"))
-        } else {
-            avatar = Avatar(image: UIImage(named: "panda"))
-        }
-            
+        let avatar = Avatar(image: UIImage(named: "panda"))
         avatarView.set(avatar: avatar)
     }
+
     
     func configureMediaMessageImageView(_ imageView: UIImageView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         /* TODO: 이곳에서 이미지캐시를 구현하면 된다.
