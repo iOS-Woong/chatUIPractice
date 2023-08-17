@@ -23,6 +23,7 @@ class ChatExamViewController: MessagesViewController {
         setupMessageCollectionViewAttributes()
         setupInputBarAttributes()
         connectMockSocket() // 테스트메서드
+        messagesCollectionView.register(CustomTagMessageContentCell.self)
     }
     
     func connectMockSocket() {
@@ -45,6 +46,17 @@ class ChatExamViewController: MessagesViewController {
         messageInputBar.sendButton.setTitleColor(.primaryColor, for: .normal)
         messageInputBar.sendButton.setTitleColor(.primaryColor.withAlphaComponent(0.3), for: .highlighted)
     }
+    
+    
+    func textCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell? {
+        
+        
+        let cell = messagesCollectionView.dequeueReusableCell(CustomTagMessageContentCell.self, for: indexPath)
+        cell.configure(with: message, at: indexPath, in: messagesCollectionView, dataSource: self, and: textMessageSizeCalculator)
+        return cell
+    }
+    
+    private lazy var textMessageSizeCalculator = CustomTextLayoutSizeCalculator(layout: self.messagesCollectionView.messagesCollectionViewFlowLayout)
     
 }
 

@@ -15,10 +15,15 @@
 		D26FE2802A7587E100CE6BBF /* ChatExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26FE27F2A7587E100CE6BBF /* ChatExamViewController.swift */; };
 		D26FE2832A75887400CE6BBF /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = D26FE2822A75887400CE6BBF /* MessageKit */; };
 		D26FE2862A7589F800CE6BBF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26FE2852A7589F800CE6BBF /* Message.swift */; };
+		D2833A322A8E34C5000FEE30 /* SomeMessageContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2833A312A8E34C5000FEE30 /* SomeMessageContentCell.swift */; };
 		D2AAF74D2A76CC14006AD936 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF74C2A76CC14006AD936 /* UIColor+Ext.swift */; };
 		D2AAF74F2A76E130006AD936 /* ChatBotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF74E2A76E130006AD936 /* ChatBotViewController.swift */; };
 		D2AAF7512A777E29006AD936 /* MessageKitDateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF7502A777E29006AD936 /* MessageKitDateFormatter+Ext.swift */; };
 		D2AAF7532A778761006AD936 /* MockSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AAF7522A778761006AD936 /* MockSocket.swift */; };
+		D2E6BE6E2A8A44AA0008C3DF /* CustomContentMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6BE6D2A8A44AA0008C3DF /* CustomContentMessageCell.swift */; };
+		D2E6BE712A8A450C0008C3DF /* CustomLayoutSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6BE702A8A450C0008C3DF /* CustomLayoutSizeCalculator.swift */; };
+		D2E6BE732A8A46310008C3DF /* CustomTagMessageContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6BE722A8A46310008C3DF /* CustomTagMessageContentCell.swift */; };
+		D2E6BE752A8A71EA0008C3DF /* CustomTextLayoutSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6BE742A8A71EA0008C3DF /* CustomTextLayoutSizeCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +36,15 @@
 		D26FE2792A75832C00CE6BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D26FE27F2A7587E100CE6BBF /* ChatExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatExamViewController.swift; sourceTree = "<group>"; };
 		D26FE2852A7589F800CE6BBF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D2833A312A8E34C5000FEE30 /* SomeMessageContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeMessageContentCell.swift; sourceTree = "<group>"; };
 		D2AAF74C2A76CC14006AD936 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		D2AAF74E2A76E130006AD936 /* ChatBotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewController.swift; sourceTree = "<group>"; };
 		D2AAF7502A777E29006AD936 /* MessageKitDateFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageKitDateFormatter+Ext.swift"; sourceTree = "<group>"; };
 		D2AAF7522A778761006AD936 /* MockSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSocket.swift; sourceTree = "<group>"; };
+		D2E6BE6D2A8A44AA0008C3DF /* CustomContentMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContentMessageCell.swift; sourceTree = "<group>"; };
+		D2E6BE702A8A450C0008C3DF /* CustomLayoutSizeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutSizeCalculator.swift; sourceTree = "<group>"; };
+		D2E6BE722A8A46310008C3DF /* CustomTagMessageContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTagMessageContentCell.swift; sourceTree = "<group>"; };
+		D2E6BE742A8A71EA0008C3DF /* CustomTextLayoutSizeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextLayoutSizeCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 		D26FE26A2A75832B00CE6BBF /* MessageKitPractice */ = {
 			isa = PBXGroup;
 			children = (
+				D2E6BE6C2A8A44960008C3DF /* Cell */,
 				D2AAF74B2A76CC01006AD936 /* Extension */,
 				D26FE2842A7589E200CE6BBF /* Model */,
 				D26FE26B2A75832B00CE6BBF /* AppDelegate.swift */,
@@ -98,6 +109,26 @@
 				D2AAF7502A777E29006AD936 /* MessageKitDateFormatter+Ext.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D2E6BE6C2A8A44960008C3DF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D2E6BE6F2A8A44FC0008C3DF /* LayoutCalculator */,
+				D2E6BE6D2A8A44AA0008C3DF /* CustomContentMessageCell.swift */,
+				D2E6BE722A8A46310008C3DF /* CustomTagMessageContentCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D2E6BE6F2A8A44FC0008C3DF /* LayoutCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				D2E6BE702A8A450C0008C3DF /* CustomLayoutSizeCalculator.swift */,
+				D2E6BE742A8A71EA0008C3DF /* CustomTextLayoutSizeCalculator.swift */,
+				D2833A312A8E34C5000FEE30 /* SomeMessageContentCell.swift */,
+			);
+			path = LayoutCalculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,13 +209,18 @@
 			files = (
 				D2AAF74D2A76CC14006AD936 /* UIColor+Ext.swift in Sources */,
 				D26FE2702A75832B00CE6BBF /* ViewController.swift in Sources */,
+				D2E6BE6E2A8A44AA0008C3DF /* CustomContentMessageCell.swift in Sources */,
+				D2833A322A8E34C5000FEE30 /* SomeMessageContentCell.swift in Sources */,
 				D2AAF74F2A76E130006AD936 /* ChatBotViewController.swift in Sources */,
 				D2AAF7532A778761006AD936 /* MockSocket.swift in Sources */,
 				D2AAF7512A777E29006AD936 /* MessageKitDateFormatter+Ext.swift in Sources */,
+				D2E6BE712A8A450C0008C3DF /* CustomLayoutSizeCalculator.swift in Sources */,
 				D26FE26C2A75832B00CE6BBF /* AppDelegate.swift in Sources */,
 				D26FE2862A7589F800CE6BBF /* Message.swift in Sources */,
+				D2E6BE732A8A46310008C3DF /* CustomTagMessageContentCell.swift in Sources */,
 				D26FE2802A7587E100CE6BBF /* ChatExamViewController.swift in Sources */,
 				D26FE26E2A75832B00CE6BBF /* SceneDelegate.swift in Sources */,
+				D2E6BE752A8A71EA0008C3DF /* CustomTextLayoutSizeCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
